@@ -8,6 +8,7 @@ export const initiateWithdrawal = async (
   walletClient: L2WalletClient
 ) => {
   const args = await parentClient.buildInitiateWithdrawal({
+    // gas: 21_000n, //
     to: walletClient.account.address,
     value: amount,
   });
