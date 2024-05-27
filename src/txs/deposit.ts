@@ -32,6 +32,7 @@ export const approvalTransaction = async (
     hash: approvalHash,
   });
 };
+
 const simulateDepositTransaction = async (
   walletClient: WalletClient,
   amount: bigint
@@ -41,7 +42,7 @@ const simulateDepositTransaction = async (
     address: optimismPortal.address,
     abi: optimismPortalAbi,
     functionName: "depositERC20Transaction",
-    args: [walletClient.account.address, amount, 0n, 50000n, false, toHex(0)],
+    args: [walletClient.account.address, amount, amount, 100000n, false, toHex(0)],
   });
 };
 
